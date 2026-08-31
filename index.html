@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banca online para Particulares | CaixaBank</title>
+  <meta name="description" content="Explora el catálogo completo de soluciones financieras de CaixaBank. Encuentra desde cuentas y tarjetas para tu día a día hasta hipotecas, seguros y planes de inversión diseñados para adaptarse a cada etapa de tu vida.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- COOKIES BANNER -->
+  <div id="cookies-banner" class="cookies-banner">
+    <div class="cookies-content">
+      <div class="cookies__logo"></div>
+      <div class="cookies-text">
+        <p><strong>Antes de continuar, te explicamos para qué usamos las cookies.</strong> Este sitio web de CaixaBank recoge datos sobre <strong>tu navegación</strong> a través de cookies propias y de terceros, que analizamos para:</p>
+        <ul>
+          <li><strong>Mejorar nuestro sitio web</strong>, nuestros productos y nuestros servicios.</li>
+          <li><strong>Personalizarte el contenido</strong> (por ejemplo, con recomendaciones de vídeos para ti).</li>
+          <li><strong>Personalizarte la publicidad</strong> que visualizas sobre nuestros productos o servicios.</li>
+        </ul>
+        <p>La personalización de contenidos y de publicidad está basada en un perfil tuyo creado a partir de tus datos de navegación. Puedes conocer más sobre el uso de cookies en nuestra <a href="#" id="cookies-more-info">política de cookies</a>.</p>
+      </div>
+      <div class="cookies-actions">
+        <a href="#" id="cookies-deny" class="cookies-btn cookies-btn--outline">Configurar cookies</a>
+        <a href="#" class="cookies-btn cookies-btn--reject">Rechazar</a>
+        <a href="#" class="cookies-btn cookies-btn--accept" onclick="document.getElementById('cookies-banner').style.display='none'; return false;">Aceptar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <!-- Top bar -->
+    <div class="header-topbar">
+      <div class="topbar-inner">
+        <nav class="topbar-nav">
+          <a href="#" class="topbar-link topbar-link--active">Particulares</a>
+          <a href="#" class="topbar-link">Empresas</a>
+        </nav>
+        <div class="topbar-right">
+          <a href="#" class="topbar-stock">Acción CABK <span class="stock-value">9,946</span> <span class="stock-change negative">-1,47%</span> <span class="stock-time">17:39</span></a>
+          <div class="topbar-lang">
+            <a href="#" class="lang-btn">ES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main header -->
+    <div class="header-main">
+      <div class="header-main-inner">
+        <!-- Logo -->
+        <a href="#" class="header-logo" title="CaixaBank (Ir a Inicio)">
+          <img src="logo.png" alt="CaixaBank" width="140" height="39">
+        </a>
+
+        <!-- Login form -->
+        <div class="header-login">
+          <form class="login-form" onsubmit="return false;">
+            <div class="login-field">
+              <label for="lineaabierta-login">Identificador</label>
+              <input type="text" id="lineaabierta-login" placeholder="Identificador" autocomplete="username">
+            </div>
+            <div class="login-field">
+              <label for="lineaabierta-pin">Contraseña</label>
+              <input type="password" id="lineaabierta-pin" placeholder="Contraseña" autocomplete="current-password">
+            </div>
+            <input type="button" value="Entrar" class="login-btn">
+          </form>
+          <div class="login-links">
+            <a href="#" class="login-forgot">¿Has olvidado tus claves de acceso?</a>
+            <a href="#" class="login-keyboard">Teclado virtual</a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="header-cta">
+          <a href="#" class="btn-hazte-cliente">Hazte cliente</a>
+          <a href="#" class="btn-acceso">Acceso</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="header-nav">
+      <div class="header-nav-inner">
+        <button class="nav-btn">Cuentas y tarjetas</button>
+        <button class="nav-btn">Préstamos e hipotecas</button>
+        <button class="nav-btn">Ahorro e inversión</button>
+        <button class="nav-btn">Seguros y alarmas</button>
+        <button class="nav-btn">Más</button>
+        <button class="nav-btn nav-btn--search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Buscar
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <section class="hero-slider">
+    <div class="slider-container">
+      <!-- Slide 1 - Active -->
+      <div class="slide slide--active" id="slide1">
+        <div class="slide-bg" style="background-image: url('hero1.webp')"></div>
+        <div class="slide-content slide-content--left">
+          <span class="slide-tag">ABRIR CUENTA ONLINE SIN COMISIONES</span>
+          <h1 class="slide-title">Hazte cliente y disfruta de un año de Movistar Plus+</h1>
+          <p class="slide-subtitle">Y llévate hasta 250 € por tu nómina.</p>
+          <a href="#" class="slide-btn slide-btn--yellow">Más información</a>
+          <p class="slide-legal">Cuentas no retribuidas <strong>0% TAE, 0% TIN.</strong></p>
+          <p class="slide-legal">Movistar Plus+ limitado a 10.000 uds. hasta el 31/05/26.</p>
+          <p class="slide-nri">NRI: 9829-2026/09542</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide" id="slide2">
+        <div class="slide-bg" style="background-image: url('hero2.webp')"></div>
+        <div class="slide-content slide-content--left">
+          <span class="slide-tag">MYBOX</span>
+          <h1 class="slide-title">Llevarte hasta 1.000 € por proteger lo que quieres es (algo) personal</h1>
+          <p class="slide-subtitle">Consigue tarjetas regalo de 50 €, 100 € o 200 € por producto MyBox/asegurado.</p>
+          <a href="#" class="slide-btn slide-btn--yellow">Más información</a>
+          <p class="slide-nri">NRI: 9815-2026/09542</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide" id="slide3">
+        <div class="slide-bg" style="background-image: url('hero3.png'); background-position: right center;"></div>
+        <div class="slide-content slide-content--left">
+          <h1 class="slide-title">Con el nuevo portal Facilitea Casa, encontrar tu hogar es fácil</h1>
+          <p class="slide-subtitle">Y dar el paso para financiarlo con CaixaBank, también.</p>
+          <a href="#" class="slide-btn slide-btn--yellow">Consultar catálogo</a>
+          <p class="slide-legal">Concesión de la financiación sujeta a la previa aprobación de CaixaBank.</p>
+          <p class="slide-nri">NRI: 8114-2025/09542</p>
+        </div>
+      </div>
+
+      <!-- Slider controls -->
+      <div class="slider-controls">
+        <button class="slider-prev" onclick="changeSlide(-1)">&#8249;</button>
+        <div class="slider-dots">
+          <button class="slider-dot slider-dot--active" onclick="goToSlide(0)"></button>
+          <button class="slider-dot" onclick="goToSlide(1)"></button>
+          <button class="slider-dot" onclick="goToSlide(2)"></button>
+        </div>
+        <button class="slider-pause" onclick="togglePause()">&#9646;&#9646;</button>
+        <button class="slider-next" onclick="changeSlide(1)">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ NECESITAS -->
+  <section class="que-necesitas">
+    <div class="container">
+      <h2 class="section-title">¿Qué necesitas?</h2>
+      <div class="productos-grid">
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Cuentas</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><circle cx="6" cy="15" r="1" fill="#00a1e0"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Tarjetas</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Seguros</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Fondos de inversión</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Domiciliar Nómina</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Hipotecas</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Carteras de inversión</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Facilitea</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Préstamos</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Renting</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0H5m14 0h2M5 21H3"/><path d="M9 21V9h6v12"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Ahorro</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+        <a href="#" class="producto-item">
+          <div class="producto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-name">Jubilación</span>
+            <span class="producto-link">Ver más <span class="arrow">›</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS PRODUCTOS DESTACADOS -->
+  <section class="cards-section">
+    <div class="container">
+      <div class="cards-grid">
+        <a href="#" class="card-producto">
+          <div class="card-img" style="background-image: url('descubrirhipotecahome.png')"></div>
+          <div class="card-body">
+            <span class="card-tag">HIPOTECA FIJA CASAFÁCIL</span>
+            <h3 class="card-title">Descubre cómo será tu hipoteca antes de contratarla</h3>
+          </div>
+        </a>
+        <a href="#" class="card-producto">
+          <div class="card-img" style="background-image: url('renting-byd.jpg')"></div>
+          <div class="card-body">
+            <span class="card-tag">RENTING</span>
+            <h3 class="card-title">BYD SEAL U DM-i Comfort: el más eléctrico de los híbridos enchufables</h3>
+          </div>
+        </a>
+        <a href="#" class="card-producto">
+          <div class="card-img" style="background-image: url('samsung-s26.jpg')"></div>
+          <div class="card-body">
+            <span class="card-tag">FACILITEA</span>
+            <h3 class="card-title">Descubre los nuevos Galaxy S26 Series</h3>
+          </div>
+        </a>
+        <a href="#" class="card-producto">
+          <div class="card-img" style="background-image: url('dets-simple-mycard.png')"></div>
+          <div class="card-body">
+            <span class="card-tag">TARJETAS</span>
+            <h3 class="card-title">Contrata tu MyCard y empieza a fraccionar</h3>
+          </div>
+        </a>
+        <a href="#" class="card-producto">
+          <div class="card-img" style="background-image: url('imaginpesook.jpg')"></div>
+          <div class="card-body">
+            <span class="card-tag">IMAGIN</span>
+            <h3 class="card-title">La cuenta para jóvenes</h3>
+          </div>
+        </a>
+        <a href="#" class="card-producto">
+          <div class="card-img" style="background-image: url('faciliteacasahome.png')"></div>
+          <div class="card-body">
+            <span class="card-tag">FACILITEA CASA</span>
+            <h3 class="card-title">Tu nueva casa empieza aquí</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNA BANCA A TU MEDIDA -->
+  <section class="banca-medida">
+    <div class="container">
+      <h2 class="section-title">Una banca a tu medida</h2>
+      <div class="medida-grid">
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="Amedida_Desktop_01.png" alt="Negocios">
+          </div>
+          <h3 class="medida-name">Negocios</h3>
+          <p class="medida-desc">Planifica y gestiona las finanzas de tu negocio</p>
+          <span class="medida-link">Ver Negocios</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="circulargeneracionplus.png" alt="Generación+">
+          </div>
+          <h3 class="medida-name">Generación+</h3>
+          <p class="medida-desc">Es hora de disfrutar y pensar en ti</p>
+          <span class="medida-link">Ver Generación+</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="bancapremier3_160.png" alt="Banca Premier">
+          </div>
+          <h3 class="medida-name">Banca Premier</h3>
+          <p class="medida-desc">Asesoramiento exclusivo</p>
+          <span class="medida-link">Ver Banca Premier</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="bancaprivada2_160.png" alt="Wealth Management">
+          </div>
+          <h3 class="medida-name">Wealth Management</h3>
+          <p class="medida-desc">Impulsamos tu patrimonio</p>
+          <span class="medida-link">Ver Wealth Management</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="Amedida_Desktop_06.png" alt="imaginKids">
+          </div>
+          <h3 class="medida-name">imaginKids</h3>
+          <p class="medida-desc">Para los peques, ¡aprende jugando!</p>
+          <span class="medida-link">Ver imaginKids</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="imaginteens.png" alt="imaginTeens">
+          </div>
+          <h3 class="medida-name">imaginTeens</h3>
+          <p class="medida-desc">Su primera app financiera</p>
+          <span class="medida-link">Ver imaginTeens</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="imaginpesook.jpg" alt="imagin">
+          </div>
+          <h3 class="medida-name">imagin</h3>
+          <p class="medida-desc">Para jóvenes, cuenta 100% digital</p>
+          <span class="medida-link">Ver imagin</span>
+        </a>
+        <a href="#" class="medida-item">
+          <div class="medida-img">
+            <img src="Amedida_Desktop_07.png" alt="HolaBank">
+          </div>
+          <h3 class="medida-name">HolaBank</h3>
+          <p class="medida-desc">Para clientes internacionales</p>
+          <span class="medida-link">Ver HolaBank</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIEMPRE A TU DISPOSICIÓN -->
+  <section class="siempre-disposicion">
+    <div class="container">
+      <h2 class="section-title">Siempre a tu disposición</h2>
+      <div class="disposicion-grid">
+        <div class="disposicion-item">
+          <div class="disposicion-icon">
+            <img src="Ventajasatudisposicion.png" alt="Banca digital">
+          </div>
+          <h3 class="disposicion-title">Banca digital</h3>
+          <p class="disposicion-desc">Haz todas tus gestiones cómodamente desde la web o la app de CaixaBankNow.</p>
+          <a href="#" class="disposicion-link">Más información</a>
+        </div>
+        <div class="disposicion-item">
+          <div class="disposicion-icon">
+            <img src="Ventajasatudisposicion02.png" alt="Pedir Cita">
+          </div>
+          <h3 class="disposicion-title">Pedir Cita</h3>
+          <p class="disposicion-desc">¿Tienes dudas? Pide cita a través de la app o la web de CaixaBankNow.</p>
+          <a href="#" class="disposicion-link">Más información</a>
+        </div>
+        <div class="disposicion-item">
+          <div class="disposicion-icon">
+            <img src="Ventajasatudisposicionico3.png" alt="Oficina">
+          </div>
+          <h3 class="disposicion-title">Oficina</h3>
+          <p class="disposicion-desc">Localiza la oficina CaixaBank que tengas más cerca.</p>
+          <a href="#" class="disposicion-link">Más información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAMBIÉN TE PUEDE INTERESAR -->
+  <section class="tambien-interesar">
+    <div class="container">
+      <h2 class="section-title">También te puede interesar</h2>
+      <div class="interesar-slider">
+        <div class="interesar-track" id="interesarTrack">
+          <a href="#" class="interesar-card">
+            <div class="interesar-img" style="background-image: url('frame_nosotros.jpg')"></div>
+            <div class="interesar-body">
+              <h3 class="interesar-title">Nosotros</h3>
+              <p class="interesar-desc">Una serie de microprogramas con foco social</p>
+            </div>
+          </a>
+          <a href="#" class="interesar-card">
+            <div class="interesar-img" style="background-image: url('Post_Desktop_02_sin_Mascara.jpg')"></div>
+            <div class="interesar-body">
+              <h3 class="interesar-title">Compromiso Social</h3>
+              <p class="interesar-desc">Imagina todo lo que podemos cambiar juntos</p>
+            </div>
+          </a>
+          <a href="#" class="interesar-card">
+            <div class="interesar-img" style="background-image: url('Post_Desktop_03_sin_mascara.jpg')"></div>
+            <div class="interesar-body">
+              <h3 class="interesar-title">Cajeros CaixaBank</h3>
+              <p class="interesar-desc">Ahora dispones de más de 11.000 cajeros</p>
+            </div>
+          </a>
+          <a href="#" class="interesar-card">
+            <div class="interesar-img" style="background-image: url('img_quenadieviajesolo.png')"></div>
+            <div class="interesar-body">
+              <h3 class="interesar-title">Que nadie viaje solo</h3>
+              <p class="interesar-desc">Fundación "la Caixa"</p>
+            </div>
+          </a>
+          <a href="#" class="interesar-card">
+            <div class="interesar-img" style="background-image: url('xperience1.jpg')"></div>
+            <div class="interesar-body">
+              <h3 class="interesar-title">Xperience CaixaBank</h3>
+              <p class="interesar-desc">Descubre este espacio con las mejores experiencias</p>
+            </div>
+          </a>
+        </div>
+        <div class="interesar-dots">
+          <button class="interesar-dot interesar-dot--active" onclick="setInteresarSlide(0)">1 Nosotros</button>
+          <button class="interesar-dot" onclick="setInteresarSlide(1)">2 Compromiso Social</button>
+          <button class="interesar-dot" onclick="setInteresarSlide(2)">3 Cajeros CaixaBank</button>
+          <button class="interesar-dot" onclick="setInteresarSlide(3)">4 Que nadie viaje solo</button>
+          <button class="interesar-dot" onclick="setInteresarSlide(4)">5 Xperience CaixaBank</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto-section">
+    <div class="container">
+      <div class="contacto-grid">
+        <a href="#" class="contacto-item">
+          <div class="contacto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contacto-info">
+            <h3>Contáctanos</h3>
+            <p>Te ayudamos a resolver tus dudas</p>
+          </div>
+        </a>
+        <a href="#" class="contacto-item">
+          <div class="contacto-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="contacto-info">
+            <h3>Servicio de Atención al Cliente</h3>
+            <p>Accede para presentar una reclamación oficial</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4 class="footer-heading">Productos</h4>
+          <ul class="footer-list">
+            <li><a href="#">Cuentas</a></li>
+            <li><a href="#">Tarjetas</a></li>
+            <li><a href="#">Préstamos personales</a></li>
+            <li><a href="#">Hipotecas</a></li>
+            <li><a href="#">Movilidad y renting</a></li>
+            <li><a href="#">Tienda Facilitea</a></li>
+            <li><a href="#">Ahorro</a></li>
+            <li><a href="#">Jubilación</a></li>
+            <li><a href="#">Inversión</a></li>
+            <li><a href="#">Seguros</a></li>
+            <li><a href="#">Alarmas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Te puede interesar</h4>
+          <ul class="footer-list">
+            <li><a href="#">Cambiar de banco</a></li>
+            <li><a href="#">Descarga la aplicación</a></li>
+            <li><a href="#">Donativos y crowdfunding</a></li>
+            <li><a href="#">Pagos online</a></li>
+            <li><a href="#">Seguridad</a></li>
+            <li><a href="#">Cultura financiera</a></li>
+            <li><a href="#">Tramitar herencia</a></li>
+            <li><a href="#">Deudor hipotecario vulnerable – CBP</a></li>
+            <li><a href="#">Acción Social</a></li>
+            <li><a href="#">Productos sostenibles</a></li>
+            <li><a href="#">Banca para extranjeros residentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Información corporativa</h4>
+          <ul class="footer-list">
+            <li><a href="#" target="_blank">Web corporativa</a></li>
+            <li><a href="#" target="_blank">CaixaBank Research</a></li>
+            <li><a href="#" target="_blank">Premios y reconocimientos</a></li>
+            <li><a href="#">Actualidad</a></li>
+            <li><a href="#" target="_blank">Sostenibilidad</a></li>
+            <li><a href="#" target="_blank">Trabaja con nosotros</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <a href="#" class="footer-contact-link">Contáctanos</a>
+              <p>Te ayudamos a resolver tus dudas</p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00a1e0" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <a href="#" class="footer-contact-link">Servicio de Atención al Cliente</a>
+              <p>Accede para presentar una reclamación oficial</p>
+            </div>
+          </div>
+          <div class="footer-shortcuts">
+            <a href="#">Banca digital</a>
+            <p>Tu banco desde tu ordenador o tu móvil</p>
+            <a href="#">Pide cita</a>
+            <p>A través de la app o la web de CaixaBank</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <a href="#" class="footer-logo">
+            <img src="logo.png" alt="CaixaBank" width="120" height="33">
+          </a>
+          <div class="footer-search">
+            <a href="#">Accesibilidad</a>
+            <a href="#">Buscar oficina</a>
+          </div>
+        </div>
+        <div class="footer-bottom-right">
+          <p class="footer-copyright">© CaixaBank, S.A. 2026</p>
+          <div class="footer-legal">
+            <a href="#">Política de cookies</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Aviso legal</a>
+            <a href="#">Tarifas e información de interés</a>
+            <a href="#">MIFID</a>
+            <a href="#">Información legal sobre CaixaBank, S.A.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

